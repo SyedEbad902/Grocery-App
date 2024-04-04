@@ -21,17 +21,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class homeScreen extends StatelessWidget {
-  const homeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Helloworld"),
-        toolbarHeight: 60,
-        backgroundColor: Colors.yellow,
-      ),
-    );
-  }
-}
