@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:grocery_app/custome_widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -9,7 +9,20 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  @override
+  List std = [
+    {
+      'name': "Organic Banana",
+      'amount': "7 Pcs, Priceg",
+      "link": "assets/images/banana.png",
+      'price': "s499"
+    },
+    {
+      'name': "Red Apple",
+      'amount': "1 kg, Priceg",
+      "link": "assets/images/apple.png",
+      'price': "s499"
+    }
+  ];
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -69,7 +82,93 @@ class _HomeScreenState extends State<HomeScreen> {
               "Exclusive Offer",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CustomContainer(
+                    image: std[0]['link'],
+                    name: std[0]['name'],
+                    amount: std[0]['amount'],
+                    price: std[0]['price']),
+                CustomContainer(
+                    image: std[1]['link'],
+                    name: std[1]['name'],
+                    amount: std[1]['amount'],
+                    price: std[1]['price']),
+                CustomContainer(
+                    image: std[1]['link'],
+                    name: std[1]['name'],
+                    amount: std[1]['amount'],
+                    price: std[1]['price']),
+              ],
+            ),
           )
+          // ListView.builder(
+          //     scrollDirection: Axis.horizontal,
+          //     shrinkWrap: true,
+          //     physics: NeverScrollableScrollPhysics(),
+          //     itemCount: std.length,
+          //     itemBuilder: (BuildContext context, int index) {
+          //       return Container(
+          //         height: 220,
+          //         width: 160,
+          //         decoration: BoxDecoration(
+          //             border: Border.all(color: Colors.black),
+          //             borderRadius: BorderRadius.circular(20)),
+          //         child: Column(
+          //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //           children: [
+          //             Container(
+          //                 height: 100, child: Image.asset(std[0]["link"])),
+          //             Padding(
+          //               padding: const EdgeInsets.only(
+          //                 right: 20,
+          //               ),
+          //               child: Text(
+          //                 std[0]["name"],
+          //                 style: const TextStyle(
+          //                     fontSize: 17, fontWeight: FontWeight.bold),
+          //               ),
+          //             ),
+          //             Padding(
+          //               padding: const EdgeInsets.only(right: 40),
+          //               child: Text(
+          //                 std[0]["amount"],
+          //                 style: const TextStyle(
+          //                   fontSize: 13,
+          //                 ),
+          //               ),
+          //             ),
+          //             Row(
+          //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //               children: [
+          //                 Container(
+          //                   padding: const EdgeInsets.only(left: 10),
+          //                   child: Text(
+          //                     std[0]["price"],
+          //                     style:
+          //                         const TextStyle(fontWeight: FontWeight.bold),
+          //                   ),
+          //                 ),
+          //                 Container(
+          //                   height: 50,
+          //                   width: 60,
+          //                   padding:
+          //                       const EdgeInsets.only(right: 10, bottom: 5),
+          //                   child: FloatingActionButton(
+          //                     onPressed: () {},
+          //                     child: const Icon(Icons.add),
+          //                   ),
+          //                 )
+          //               ],
+          //             )
+          //           ],
+          //         ),
+          //       );
+          //     }),
         ],
       ),
     );
