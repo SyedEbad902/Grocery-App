@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/hom_screen.dart';
 
 class onboarding extends StatelessWidget {
   const onboarding({super.key});
@@ -39,7 +40,12 @@ class onboarding extends StatelessWidget {
               width: 300,
               height: 55,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                   Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()));
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromRGBO(83, 177, 117, 5),
                   shape: RoundedRectangleBorder(
