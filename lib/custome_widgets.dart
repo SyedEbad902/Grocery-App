@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 
 class CustomContainer extends StatelessWidget {
@@ -15,30 +17,38 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 10, right: 10),
+      margin: const EdgeInsets.only(left: 10, right: 10),
       height: 220,
       width: 160,
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.black),
-          borderRadius: BorderRadius.circular(20)),
+        border: Border.all(color: Colors.grey),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: const [
+          BoxShadow(
+              color: Colors.white,
+              offset: Offset(0, 3),
+              blurRadius: 7,
+              spreadRadius: 4),
+        ],
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(height: 100, child: Image.asset(image)),
           Padding(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               right: 20,
             ),
             child: Text(
               name,
-              style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: 40),
+            padding: const EdgeInsets.only(right: 40),
             child: Text(
               amount,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 13,
               ),
             ),
@@ -50,7 +60,7 @@ class CustomContainer extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 10),
                 child: Text(
                   price,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
               Container(
@@ -58,8 +68,12 @@ class CustomContainer extends StatelessWidget {
                 width: 60,
                 padding: const EdgeInsets.only(right: 10, bottom: 5),
                 child: FloatingActionButton(
+                  backgroundColor: const Color.fromRGBO(83, 177, 117, 5),
                   onPressed: () {},
-                  child: const Icon(Icons.add),
+                  child: const Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
                 ),
               )
             ],
