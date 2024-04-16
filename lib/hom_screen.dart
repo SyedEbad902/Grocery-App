@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:grocery_app/custome_widgets.dart';
+import 'package:grocery_app/product_list.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,32 +11,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List std = [
-    {
-      'name': "Organic Banana",
-      'amount': "7 Pcs, Priceg",
-      "link": "assets/images/banana.png",
-      'price': "Rs499"
-    },
-    {
-      'name': "Red Apple",
-      'amount': "1 kg, Priceg",
-      "link": "assets/images/apple.png",
-      'price': "Rs499"
-    },
-    {
-      'name': "Bell Pepper Red",
-      'amount': "1 kg, Priceg",
-      "link": "assets/images/Bell-pepper.png",
-      'price': "Rs499"
-    },
-    {
-      'name': "Ginger",
-      'amount': "250gm, Priceg",
-      "link": "assets/images/ginger.png",
-      'price': "s499"
-    }
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,13 +58,14 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             Container(
-              width: 345,
-              padding: const EdgeInsets.only(left: 10, top: 10),
+              height: 60,
+              width: 340,
+              padding: const EdgeInsets.only(top: 10),
               child: TextField(
                 // focusNode: _focusNode,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(15),
                     ),
                     labelText: 'Search Store',
                     prefixIcon: const Icon(
@@ -120,10 +96,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Container(
-                    padding: const EdgeInsets.only(right: 20, bottom: 10),
-                    child: const Text(
-                      "See all",
-                      style: TextStyle(color: Color.fromRGBO(83, 177, 117, 5)),
+                    padding: const EdgeInsets.only(right: 20, bottom: 5),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "See all",
+                        style:
+                            TextStyle(color: Color.fromRGBO(83, 177, 117, 5)),
+                      ),
                     )),
               ],
             ),
@@ -133,20 +113,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CustomContainer(
-                      image: std[0]['link'],
-                      name: std[0]['name'],
-                      amount: std[0]['amount'],
-                      price: std[0]['price']),
+                      image: product[0]['link'],
+                      name: product[0]['name'],
+                      amount: product[0]['amount'],
+                      price: product[0]['price']),
                   CustomContainer(
-                      image: std[1]['link'],
-                      name: std[1]['name'],
-                      amount: std[1]['amount'],
-                      price: std[1]['price']),
+                      image: product[1]['link'],
+                      name: product[1]['name'],
+                      amount: product[1]['amount'],
+                      price: product[1]['price']),
                   CustomContainer(
-                      image: std[1]['link'],
-                      name: std[1]['name'],
-                      amount: std[1]['amount'],
-                      price: std[1]['price']),
+                      image: product[1]['link'],
+                      name: product[1]['name'],
+                      amount: product[1]['amount'],
+                      price: product[1]['price']),
                 ],
               ),
             ),
@@ -162,10 +142,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Container(
                     padding:
-                        const EdgeInsets.only(top: 10, right: 20, bottom: 10),
-                    child: const Text(
-                      "See all",
-                      style: TextStyle(color: Color.fromRGBO(83, 177, 117, 5)),
+                        const EdgeInsets.only(top: 5, right: 20, bottom: 5),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "See all",
+                        style:
+                            TextStyle(color: Color.fromRGBO(83, 177, 117, 5)),
+                      ),
                     ))
               ],
             ),
@@ -175,82 +159,135 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CustomContainer(
-                      image: std[2]['link'],
-                      name: std[2]['name'],
-                      amount: std[2]['amount'],
-                      price: std[2]['price']),
+                      image: product[2]['link'],
+                      name: product[2]['name'],
+                      amount: product[2]['amount'],
+                      price: product[2]['price']),
                   CustomContainer(
-                      image: std[3]['link'],
-                      name: std[3]['name'],
-                      amount: std[3]['amount'],
-                      price: std[3]['price']),
+                      image: product[3]['link'],
+                      name: product[3]['name'],
+                      amount: product[3]['amount'],
+                      price: product[3]['price']),
                 ],
               ),
             ),
-
-            // ListView.builder(
-            //     scrollDirection: Axis.horizontal,
-            //     shrinkWrap: true,
-            //     physics: NeverScrollableScrollPhysics(),
-            //     itemCount: std.length,
-            //     itemBuilder: (BuildContext context, int index) {
-            //       return Container(
-            //         height: 220,
-            //         width: 160,
-            //         decoration: BoxDecoration(
-            //             border: Border.all(color: Colors.black),
-            //             borderRadius: BorderRadius.circular(20)),
-            //         child: Column(
-            //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //           children: [
-            //             Container(
-            //                 height: 100, child: Image.asset(std[0]["link"])),
-            //             Padding(
-            //               padding: const EdgeInsets.only(
-            //                 right: 20,
-            //               ),
-            //               child: Text(
-            //                 std[0]["name"],
-            //                 style: const TextStyle(
-            //                     fontSize: 17, fontWeight: FontWeight.bold),
-            //               ),
-            //             ),
-            //             Padding(
-            //               padding: const EdgeInsets.only(right: 40),
-            //               child: Text(
-            //                 std[0]["amount"],
-            //                 style: const TextStyle(
-            //                   fontSize: 13,
-            //                 ),
-            //               ),
-            //             ),
-            //             Row(
-            //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //               children: [
-            //                 Container(
-            //                   padding: const EdgeInsets.only(left: 10),
-            //                   child: Text(
-            //                     std[0]["price"],
-            //                     style:
-            //                         const TextStyle(fontWeight: FontWeight.bold),
-            //                   ),
-            //                 ),
-            //                 Container(
-            //                   height: 50,
-            //                   width: 60,
-            //                   padding:
-            //                       const EdgeInsets.only(right: 10, bottom: 5),
-            //                   child: FloatingActionButton(
-            //                     onPressed: () {},
-            //                     child: const Icon(Icons.add),
-            //                   ),
-            //                 )
-            //               ],
-            //             )
-            //           ],
-            //         ),
-            //       );
-            //     }),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(top: 10, left: 20, bottom: 5),
+                  child: const Text(
+                    "Grocery",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Container(
+                    padding:
+                        const EdgeInsets.only(top: 5, right: 20, bottom: 5),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "See all",
+                        style:
+                            TextStyle(color: Color.fromRGBO(83, 177, 117, 5)),
+                      ),
+                    ))
+              ],
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      margin: const EdgeInsets.only(
+                        top: 5,
+                        left: 5,
+                        bottom: 5,
+                        right: 5,
+                      ),
+                      width: 250,
+                      height: 130,
+                      decoration: BoxDecoration(
+                          color: const Color.fromRGBO(254, 241, 228, 5),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Row(
+                        // mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Image.asset("assets/images/spices.png"),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          const Text(
+                            "Pulses",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      margin: const EdgeInsets.only(
+                        top: 5,
+                        left: 5,
+                        bottom: 5,
+                        right: 5,
+                      ),
+                      width: 250,
+                      height: 130,
+                      decoration: BoxDecoration(
+                          color: const Color.fromRGBO(229, 243, 234, 5),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Row(
+                        // mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Image.asset("assets/images/rice.png"),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          const Text(
+                            "Rice",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CustomContainer(
+                      image: product[4]['link'],
+                      name: product[4]['name'],
+                      amount: product[4]['amount'],
+                      price: product[4]['price']),
+                  CustomContainer(
+                      image: product[5]['link'],
+                      name: product[5]['name'],
+                      amount: product[5]['amount'],
+                      price: product[5]['price']),
+                ],
+              ),
+            ),
           ],
         ),
       ),

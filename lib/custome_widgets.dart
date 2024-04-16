@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
+import 'package:grocery_app/product_list.dart';
 
 class CustomContainer extends StatelessWidget {
   final image;
@@ -69,7 +70,9 @@ class CustomContainer extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 10, bottom: 5),
                 child: FloatingActionButton(
                   backgroundColor: const Color.fromRGBO(83, 177, 117, 5),
-                  onPressed: () {},
+                  onPressed: () {
+                    print(product[0]["name"]);
+                  },
                   child: const Icon(
                     Icons.add,
                     color: Colors.white,
