@@ -56,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               height: 60,
@@ -107,28 +108,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     )),
               ],
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CustomContainer(
-                      image: product[0]['link'],
-                      name: product[0]['name'],
-                      amount: product[0]['amount'],
-                      price: product[0]['price']),
-                  CustomContainer(
-                      image: product[1]['link'],
-                      name: product[1]['name'],
-                      amount: product[1]['amount'],
-                      price: product[1]['price']),
-                  CustomContainer(
-                      image: product[1]['link'],
-                      name: product[1]['name'],
-                      amount: product[1]['amount'],
-                      price: product[1]['price']),
-                ],
-              ),
+            Container(
+              height: 220,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: exclusiveProduct.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return CustomContainer(
+                      image: exclusiveProduct[index]['link'],
+                      name: exclusiveProduct[index]['name'],
+                      amount: exclusiveProduct[index]['amount'],
+                      price: exclusiveProduct[index]['price'],
+                      index: index,
+                    );
+                  }),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -153,23 +146,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     ))
               ],
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CustomContainer(
-                      image: product[2]['link'],
-                      name: product[2]['name'],
-                      amount: product[2]['amount'],
-                      price: product[2]['price']),
-                  CustomContainer(
-                      image: product[3]['link'],
-                      name: product[3]['name'],
-                      amount: product[3]['amount'],
-                      price: product[3]['price']),
-                ],
-              ),
+            Container(
+              height: 220,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: BestSellProduct.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return CustomContainer(
+                      image: BestSellProduct[index]['link'],
+                      name: BestSellProduct[index]['name'],
+                      amount: BestSellProduct[index]['amount'],
+                      price: BestSellProduct[index]['price'],
+                      index: index,
+                    );
+                  }),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -270,23 +260,20 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 10,
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CustomContainer(
-                      image: product[4]['link'],
-                      name: product[4]['name'],
-                      amount: product[4]['amount'],
-                      price: product[4]['price']),
-                  CustomContainer(
-                      image: product[5]['link'],
-                      name: product[5]['name'],
-                      amount: product[5]['amount'],
-                      price: product[5]['price']),
-                ],
-              ),
+            Container(
+              height: 220,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: GroceryProduct.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return CustomContainer(
+                      image: GroceryProduct[index]['link'],
+                      name: GroceryProduct[index]['name'],
+                      amount: GroceryProduct[index]['amount'],
+                      price: GroceryProduct[index]['price'],
+                      index: index,
+                    );
+                  }),
             ),
           ],
         ),

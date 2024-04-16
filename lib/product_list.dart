@@ -1,4 +1,4 @@
-List product = [
+List exclusiveProduct = [
   {
     'name': "Organic Banana",
     'amount': "7 Pcs, Priceg",
@@ -10,7 +10,8 @@ List product = [
     'amount': "1 kg, Priceg",
     "link": "assets/images/apple.png",
     'price': "\$4.99"
-  },
+  },];
+  List BestSellProduct = [
   {
     'name': "Bell Pepper Red",
     'amount': "1 kg, Priceg",
@@ -23,6 +24,8 @@ List product = [
     "link": "assets/images/ginger.png",
     'price': "\$4.99"
   },
+  ];
+  List GroceryProduct = [
   {
     'name': "Beef Bone",
     'amount': "1kg, Priceg",

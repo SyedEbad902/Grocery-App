@@ -8,12 +8,14 @@ class CustomContainer extends StatelessWidget {
   final name;
   final amount;
   final price;
+  final index;
   const CustomContainer(
       {super.key,
       required this.image,
       required this.name,
       required this.amount,
-      required this.price});
+      required this.price,
+      this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +73,7 @@ class CustomContainer extends StatelessWidget {
                 child: FloatingActionButton(
                   backgroundColor: const Color.fromRGBO(83, 177, 117, 5),
                   onPressed: () {
-                    print(product[0]["name"]);
+                    print(exclusiveProduct[index]["name"]);
                   },
                   child: const Icon(
                     Icons.add,
