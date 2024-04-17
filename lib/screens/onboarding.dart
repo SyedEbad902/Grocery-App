@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/hom_screen.dart';
+import 'package:grocery_app/screens/hom_screen.dart';
 
+// ignore: camel_case_types
 class onboarding extends StatelessWidget {
   const onboarding({super.key});
 
@@ -41,7 +42,7 @@ class onboarding extends StatelessWidget {
               height: 55,
               child: ElevatedButton(
                 onPressed: () {
-                   Navigator.pushReplacement(
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const HomeScreen()));

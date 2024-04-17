@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:grocery_app/custome_widgets.dart';
-import 'package:grocery_app/product_list.dart';
+import 'package:grocery_app/screens/custome_widgets.dart';
+import 'package:grocery_app/screens/product_list.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               height: 60,
@@ -108,18 +108,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     )),
               ],
             ),
-            Container(
+            SizedBox(
               height: 220,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: exclusiveProduct.length,
+                  itemCount: product[0].length,
                   itemBuilder: (BuildContext context, int index) {
                     return CustomContainer(
-                      image: exclusiveProduct[index]['link'],
-                      name: exclusiveProduct[index]['name'],
-                      amount: exclusiveProduct[index]['amount'],
-                      price: exclusiveProduct[index]['price'],
+                      image: product[0][index]['link'],
+                      name: product[0][index]['name'],
+                      amount: product[0][index]['amount'],
+                      price: product[0][index]['price'],
                       index: index,
+                      listIndex: 0,
                     );
                   }),
             ),
@@ -146,18 +147,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     ))
               ],
             ),
-            Container(
+            SizedBox(
               height: 220,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: BestSellProduct.length,
+                  itemCount: product[1].length,
                   itemBuilder: (BuildContext context, int index) {
                     return CustomContainer(
-                      image: BestSellProduct[index]['link'],
-                      name: BestSellProduct[index]['name'],
-                      amount: BestSellProduct[index]['amount'],
-                      price: BestSellProduct[index]['price'],
+                      image: product[1][index]['link'],
+                      name: product[1][index]['name'],
+                      amount: product[1][index]['amount'],
+                      price: product[1][index]['price'],
                       index: index,
+                      listIndex: 1,
                     );
                   }),
             ),
@@ -257,21 +259,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Container(
+            SizedBox(
               height: 220,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: GroceryProduct.length,
+                  itemCount: product[2].length,
                   itemBuilder: (BuildContext context, int index) {
                     return CustomContainer(
-                      image: GroceryProduct[index]['link'],
-                      name: GroceryProduct[index]['name'],
-                      amount: GroceryProduct[index]['amount'],
-                      price: GroceryProduct[index]['price'],
+                      image: product[2][index]['link'],
+                      name: product[2][index]['name'],
+                      amount: product[2][index]['amount'],
+                      price: product[2][index]['price'],
                       index: index,
+                      listIndex: 2,
                     );
                   }),
             ),

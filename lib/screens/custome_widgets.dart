@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
-import 'package:grocery_app/product_list.dart';
+import 'package:grocery_app/screens/product-data.dart';
+import 'package:grocery_app/screens/product_list.dart';
 
 class CustomContainer extends StatelessWidget {
   final image;
@@ -9,13 +10,15 @@ class CustomContainer extends StatelessWidget {
   final amount;
   final price;
   final index;
+  final listIndex;
   const CustomContainer(
       {super.key,
       required this.image,
       required this.name,
       required this.amount,
       required this.price,
-      this.index});
+      this.index,
+      this.listIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +40,7 @@ class CustomContainer extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(height: 100, child: Image.asset(image)),
+          SizedBox(height: 100, child: Image.asset(image)),
           Padding(
             padding: const EdgeInsets.only(
               right: 20,
@@ -73,7 +76,13 @@ class CustomContainer extends StatelessWidget {
                 child: FloatingActionButton(
                   backgroundColor: const Color.fromRGBO(83, 177, 117, 5),
                   onPressed: () {
-                    print(exclusiveProduct[index]["name"]);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProductData(
+                                  name: product[listIndex][index]["name"],
+                                  imageUrl: product[listIndex][index]["url"],
+                                )));
                   },
                   child: const Icon(
                     Icons.add,
