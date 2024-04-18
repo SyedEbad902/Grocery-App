@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
           GButton(icon: Icons.explore_outlined, text: "Explore"),
           GButton(icon: Icons.shopping_cart_outlined, text: "Cart"),
           GButton(icon: Icons.favorite_outline, text: "Favroite"),
-          GButton(icon: Icons.login, text: "Account"),
+          GButton(icon: Icons.person_2_outlined, text: "Account"),
         ],
       ),
       appBar: AppBar(
