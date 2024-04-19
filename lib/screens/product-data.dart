@@ -82,7 +82,7 @@ class ProductData extends StatelessWidget {
                   "1kg , price",
                   style: TextStyle(fontSize: 16),
                 )),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
@@ -92,19 +92,19 @@ class ProductData extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                        margin: EdgeInsets.only(left: 10, top: 5),
+                        margin: const EdgeInsets.only(left: 10, top: 5),
                         child: IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.remove,
                               size: 20,
                             ))),
-                    Container(
+                    SizedBox(
                         height: 40,
                         width: 43,
                         child: Center(
                           child: TextField(
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 13, fontWeight: FontWeight.bold),
                             textAlign: TextAlign.center,
                             textAlignVertical: TextAlignVertical.center,
@@ -116,25 +116,25 @@ class ProductData extends StatelessWidget {
                           ),
                         )),
                     Container(
-                        margin: EdgeInsets.only(top: 5),
+                        margin: const EdgeInsets.only(top: 5),
                         child: IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.add,
                               size: 20,
                             ))),
                   ],
                 ),
                 Container(
-                  margin: EdgeInsets.only(right: 10),
-                  child: Text(
+                  margin: const EdgeInsets.only(right: 10),
+                  child: const Text(
                     "\$4.99",
                     style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
                   ),
                 )
               ],
             ),
-            Divider(
+            const Divider(
               color: Colors.grey, // Customize color if needed
               thickness: 1.0, // Customize thickness if needed
               height: 35.0, // Customize height if needed
@@ -143,20 +143,20 @@ class ProductData extends StatelessWidget {
             ),
             Container(
                 padding: const EdgeInsets.only(left: 20),
-                child: Text(
+                child: const Text(
                   'Product Details',
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 16, fontWeight: FontWeight.bold),
                 )),
             Container(
                 padding: const EdgeInsets.only(left: 20),
-                child: Text(
+                child: const Text(
                   'Savor the juicy sweetness of this vibrant fruit, a refreshing burst of flavor that invigorates the senses and delights the palate with every bite.',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
                   ),
                 )),
-            Divider(
+            const Divider(
               color: Colors.grey, // Customize color if needed
               thickness: 1.0, // Customize thickness if needed
               height: 23.0, // Customize height if needed
@@ -168,31 +168,31 @@ class ProductData extends StatelessWidget {
               children: [
                 Container(
                     padding: const EdgeInsets.only(left: 20),
-                    child: Text(
+                    child: const Text(
                       'Nutritions',
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontSize: 16, fontWeight: FontWeight.bold),
                     )),
                 Row(
                   children: [
                     Container(
-                        padding: EdgeInsets.all(3),
+                        padding: const EdgeInsets.all(3),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: Color.fromRGBO(235, 235, 235, 5)),
-                        child: Text(
+                            color: const Color.fromRGBO(235, 235, 235, 5)),
+                        child: const Text(
                           '100g',
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 16,
                           ),
                         )),
                     IconButton(
-                        onPressed: () {}, icon: Icon(Icons.navigate_next))
+                        onPressed: () {}, icon: const Icon(Icons.navigate_next))
                   ],
                 )
               ],
             ),
-            Divider(
+            const Divider(
               color: Colors.grey, // Customize color if needed
               thickness: 1.0, // Customize thickness if needed
               height: 10.0, // Customize height if needed
@@ -204,35 +204,35 @@ class ProductData extends StatelessWidget {
               children: [
                 Container(
                     padding: const EdgeInsets.only(left: 20),
-                    child: Text(
+                    child: const Text(
                       'Review',
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontSize: 16, fontWeight: FontWeight.bold),
                     )),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.star,
                       color: Color.fromRGBO(243, 96, 63, 5),
                       size: 20,
                     ),
-                    Icon(Icons.star,
+                    const Icon(Icons.star,
                         color: Color.fromRGBO(243, 96, 63, 5), size: 20),
-                    Icon(Icons.star,
+                    const Icon(Icons.star,
                         color: Color.fromRGBO(243, 96, 63, 5), size: 20),
-                    Icon(Icons.star,
+                    const Icon(Icons.star,
                         color: Color.fromRGBO(243, 96, 63, 5), size: 20),
-                    Icon(Icons.star,
+                    const Icon(Icons.star,
                         color: Color.fromRGBO(243, 96, 63, 5), size: 20),
                     IconButton(
-                        onPressed: () {}, icon: Icon(Icons.navigate_next))
+                        onPressed: () {}, icon: const Icon(Icons.navigate_next))
                   ],
                 )
               ],
             ),
             Center(
               child: Container(
-                margin: EdgeInsets.all(10),
+                margin: const EdgeInsets.all(10),
                 width: 300,
                 height: 55,
                 child: ElevatedButton(

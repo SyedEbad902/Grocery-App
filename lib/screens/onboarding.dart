@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/screens/hom_screen.dart';
+import 'package:grocery_app/screens/gnav_bar.dart';
 
 // ignore: camel_case_types
 class onboarding extends StatelessWidget {
@@ -45,7 +45,7 @@ class onboarding extends StatelessWidget {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const HomeScreen()));
+                          builder: (context) => const GoogleNavBar()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromRGBO(83, 177, 117, 5),

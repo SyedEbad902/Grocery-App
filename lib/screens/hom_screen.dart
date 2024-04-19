@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:grocery_app/screens/custome_widgets.dart';
 import 'package:grocery_app/screens/product_list.dart';
 
@@ -14,23 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const GNav(
-        backgroundColor: Colors.white,
-        color: Colors.black,
-        activeColor: Color.fromRGBO(83, 177, 117, 5),
-        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 25),
-        iconSize: 25,
-        gap: 5,
-        duration: Duration(milliseconds: 900),
-        tabs: [
-          GButton(icon: Icons.shop_2_outlined, text: "Shop"),
-          GButton(icon: Icons.explore_outlined, text: "Explore"),
-          GButton(icon: Icons.shopping_cart_outlined, text: "Cart"),
-          GButton(icon: Icons.favorite_outline, text: "Favroite"),
-          GButton(icon: Icons.person_2_outlined, text: "Account"),
-        ],
-      ),
-      appBar: AppBar(
+       appBar: AppBar(
         centerTitle: true,
         title: Column(
           children: [
