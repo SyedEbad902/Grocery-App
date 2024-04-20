@@ -19,7 +19,7 @@ class GoogleNavBar extends StatelessWidget {
         gap: 5,
         duration: const Duration(milliseconds: 900),
         onTabChange: (value) {
-          print(value);
+          
           controller.index.value = value;
         },
         tabs: const [
