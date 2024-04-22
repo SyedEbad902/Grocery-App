@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/screens/product_list.dart';
+import 'package:grocery_app/product-list/find_product.dart';
+import 'package:grocery_app/screens/beverages.dart';
 
 class ExploreView extends StatelessWidget {
   const ExploreView({super.key});
@@ -55,6 +56,7 @@ class ExploreView extends StatelessWidget {
                     InkWell(
                       onTap: () {},
                       child: Container(
+                        padding: EdgeInsets.only(top: 5),
                         margin: const EdgeInsets.only(
                           top: 5,
                           left: 5,
@@ -70,13 +72,14 @@ class ExploreView extends StatelessWidget {
                               color: const Color.fromRGBO(164, 213, 181, 5),
                             )),
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             const SizedBox(
-                              height: 20,
-                            ),
+                                // height: 20,
+                                ),
                             Image.asset(findProduct[firstIndex]["link"]),
                             const SizedBox(
-                              height: 20,
+                              height: 10,
                             ),
                             Text(
                               findProduct[firstIndex]["name"],
@@ -88,8 +91,14 @@ class ExploreView extends StatelessWidget {
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Beverages()));
+                      },
                       child: Container(
+                        padding: EdgeInsets.only(top: 5),
                         margin: const EdgeInsets.only(
                           top: 5,
                           left: 5,
@@ -105,16 +114,16 @@ class ExploreView extends StatelessWidget {
                               color: const Color.fromRGBO(164, 213, 181, 5),
                             )),
                         child: Column(
-                          // mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             const SizedBox(
-                              height: 20,
-                            ),
+                                // height: 20,
+                                ),
                             Image.asset(findProduct.length > secondIndex
                                 ? findProduct[secondIndex]["link"]
                                 : ''),
                             const SizedBox(
-                              height: 20,
+                              height: 10,
                             ),
                             Text(
                               findProduct.length > secondIndex

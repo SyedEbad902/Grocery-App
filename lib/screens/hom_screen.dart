@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/screens/custome_widgets.dart';
-import 'package:grocery_app/screens/product_list.dart';
+import 'package:grocery_app/screens/custome%20widgets/custome_widgets.dart';
+import 'package:grocery_app/product-list/product_list.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:grocery_app/screens/product-data.dart';
-import 'package:grocery_app/screens/product_list.dart';
+import 'package:grocery_app/product-list/product_list.dart';
 
 class CustomContainer extends StatelessWidget {
   final image;
