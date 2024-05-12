@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/product-list/find_product.dart';
 import 'package:grocery_app/screens/beverages.dart';
+import 'package:grocery_app/screens/search.dart';
 
 class ExploreView extends StatelessWidget {
   const ExploreView({super.key});
@@ -54,7 +55,15 @@ class ExploreView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        print(firstIndex);
+                        if (firstIndex == 4) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SearchScreen()));
+                        }
+                      },
                       child: Container(
                         padding: EdgeInsets.only(top: 5),
                         margin: const EdgeInsets.only(
@@ -92,10 +101,13 @@ class ExploreView extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Beverages()));
+                        print(secondIndex);
+                        if (secondIndex == 5) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Beverages()));
+                        }
                       },
                       child: Container(
                         padding: EdgeInsets.only(top: 5),

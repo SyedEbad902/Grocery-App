@@ -36,3 +36,41 @@ List beveragesList = [
     'price': "\$4.99",
   },
 ];
+List eggsList = [
+  {
+    'name': "Egg Red",
+    'amount': "4pcs, Price",
+    "link": "assets/images/egg1.png",
+    'price': "\$1.99",
+  },
+  {
+    'name': "Egg White",
+    'amount': "4pcs, Price",
+    "link": "assets/images/egg2.png",
+    'price': "\$1.99",
+  },
+  {
+    'name': "Egg Pasta",
+    'amount': "3kg, Priceg",
+    "link": "assets/images/egg3.png",
+    'price': "\$15.99",
+  },
+  {
+    'name': "Egg Noodles",
+    'amount': "2kg, Price",
+    "link": "assets/images/egg4.png",
+    'price': "\$15.99",
+  },
+  {
+    'name': "Mayonnais\nEggless",
+    'amount': "325ml, Price",
+    "link": "assets/images/egg5.png",
+    'price': "\$4.99",
+  },
+  {
+    'name': "Egg Noodles",
+    'amount': "3kg, Price",
+    "link": "assets/images/egg6.png",
+    'price': "\$4.99",
+  },
+];
