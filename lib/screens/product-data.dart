@@ -45,13 +45,19 @@ class ProductData extends StatelessWidget {
                                   child:
                                       Image.asset("assets/images/upload.png"))),
                         ]),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    // const SizedBox(
+                    //   height,
+                    // ),
                     Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Center(child: Image.asset(imageUrl)),
+                        Hero(
+                            tag: imageUrl,
+                            child: Image.asset(
+                              imageUrl,
+                              height: 200,
+                              width: 200,
+                            )),
                       ],
                     )
                   ],
@@ -145,8 +151,7 @@ class ProductData extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 20),
                 child: const Text(
                   'Product Details',
-                  style: TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 )),
             Container(
                 padding: const EdgeInsets.only(left: 20),
@@ -170,8 +175,8 @@ class ProductData extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 20),
                     child: const Text(
                       'Nutritions',
-                      style: TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     )),
                 Row(
                   children: [
@@ -206,8 +211,8 @@ class ProductData extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 20),
                     child: const Text(
                       'Review',
-                      style: TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     )),
                 Row(
                   children: [

@@ -1,30 +1,32 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
-import 'package:grocery_app/screens/product-data.dart';
-import 'package:grocery_app/product-list/product_list.dart';
 
 class CustomContainer extends StatelessWidget {
   final image;
   final name;
   final amount;
   final price;
-  final index;
-  final listIndex;
+  // final index;
+  // final listIndex;
+  final void Function()? onPressed;
   const CustomContainer(
       {super.key,
       required this.image,
       required this.name,
       required this.amount,
       required this.price,
-      this.index,
-      this.listIndex});
+      // this.index,
+      // this.listIndex,
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.only(left: 10, right: 10),
       height: 220,
+      // height: size.height * 0.5,
       width: 160,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
@@ -40,7 +42,14 @@ class CustomContainer extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SizedBox(height: 100, child: Image.asset(image)),
+          SizedBox(
+              height: 100,
+              child: Hero(
+                  tag: image,
+                  child: Image.asset(
+                    image,
+                    width: 100,
+                  ))),
           Padding(
             padding: const EdgeInsets.only(
               right: 20,
@@ -75,15 +84,7 @@ class CustomContainer extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 10, bottom: 5),
                 child: FloatingActionButton(
                   backgroundColor: const Color.fromRGBO(83, 177, 117, 5),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ProductData(
-                                  name: product[listIndex][index]["name"],
-                                  imageUrl: product[listIndex][index]["url"],
-                                )));
-                  },
+                  onPressed: onPressed,
                   child: const Icon(
                     Icons.add,
                     color: Colors.white,

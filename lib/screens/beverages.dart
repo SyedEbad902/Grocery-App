@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/product-list/beverages_list.dart';
 import 'package:grocery_app/screens/custome%20widgets/custome_widgets.dart';
+import 'package:grocery_app/screens/product-data.dart';
 
 class Beverages extends StatelessWidget {
   const Beverages({super.key});
@@ -19,7 +20,7 @@ class Beverages extends StatelessWidget {
           InkWell(
             onTap: () {},
             child: Container(
-              margin: EdgeInsets.only(right: 10),
+              margin: const EdgeInsets.only(right: 10),
               child: Image.asset(
                 "assets/images/filter-icon.png",
                 width: 17,
@@ -33,7 +34,7 @@ class Beverages extends StatelessWidget {
           children: [
             ListView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: (beveragesList.length / 2).ceil(),
                 itemBuilder: (BuildContext context, int index) {
                   return Row(
@@ -46,6 +47,18 @@ class Beverages extends StatelessWidget {
                             name: beveragesList[index * 2]['name'],
                             amount: beveragesList[index * 2]['amount'],
                             price: beveragesList[index * 2]['price'],
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ProductData(
+                                            name: beveragesList[index]["name"],
+                                            // imageUrl: product[listIndex][index]["url"],
+
+                                            imageUrl: beveragesList[index]
+                                                ['link'],
+                                          )));
+                            },
                             // index: index,
                             // listIndex: 1,
                           ),
@@ -65,6 +78,17 @@ class Beverages extends StatelessWidget {
                                   amount: beveragesList[index * 2 + 1]
                                       ['amount'],
                                   price: beveragesList[index * 2 + 1]['price'],
+                                  onPressed: () {
+                                    MaterialPageRoute(
+                                        builder: (context) => ProductData(
+                                              name: beveragesList[index]
+                                                  ["name"],
+                                              // imageUrl: product[listIndex][index]["url"],
+
+                                              imageUrl: beveragesList[index]
+                                                  ['link'],
+                                            ));
+                                  },
                                   // index: index,
                                   // listIndex: 1,
                                 ),
@@ -72,7 +96,7 @@ class Beverages extends StatelessWidget {
                             // ? CustomContainer(
                             //     data: dataList[index * 2 + 1],
                             //   )
-                            : SizedBox(), // Empty container if no data
+                            : const SizedBox(), // Empty container if no data
                       ),
                     ],
                   );

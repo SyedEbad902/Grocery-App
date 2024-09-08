@@ -3,7 +3,8 @@ List product = [
     {
       'name': "Organic Banana",
       'amount': "7 Pcs, Priceg",
-      "link": "assets/images/banana.png",
+      "link": "assets/images/new-banana.png",
+      //  "assets/images/banana.png",
       'price': "\$4.99",
       'url': "assets/images/big-banana.png"
     },
@@ -17,7 +18,9 @@ List product = [
     {
       'name': "Organic Banana",
       'amount': "7 Pcs, Priceg",
-      "link": "assets/images/banana.png",
+      // "link": "assets/images/banana.png",
+      "link": "assets/images/new-banana.png",
+
       'price': "\$4.99"
     },
   ],

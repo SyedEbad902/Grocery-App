@@ -10,13 +10,12 @@ class onboarding extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // First widget in the stack is the background image
           Positioned.fill(
             child: Image.asset(
-              'assets/images/onboarding.jpg', // Replace with your image path
+              'assets/images/onboarding.jpg', 
               fit: BoxFit.cover,
               width: double.infinity,
-              height: double.infinity, // Cover the whole screen
+              height: double.infinity, 
             ),
           ),
           Positioned(
