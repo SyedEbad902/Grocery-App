@@ -1,5 +1,12 @@
-
 List findProduct = [
+  {
+    'name': "Dairy & Eggs",
+    "link": "assets/images/image5.png",
+  },
+  {
+    'name': "Bevarages",
+    "link": "assets/images/image6.png",
+  },
   {
     'name': "Fresh Fruits\n& Vegetables",
     "link": "assets/images/image1.png",
@@ -16,12 +23,4 @@ List findProduct = [
     'name': "Bakery & Snacks",
     "link": "assets/images/image4.png",
   },
-  {
-    'name': "Dairy & Eggs",
-    "link": "assets/images/image5.png",
-  },
-  {
-    'name': "Bevarages",
-    "link": "assets/images/image6.png",
-  }
 ];

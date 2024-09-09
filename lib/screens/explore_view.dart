@@ -62,14 +62,14 @@ class ExploreView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      if (index == 4) {
+                      if (index == 0) {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => SearchScreen(
                                       list: eggsList,
                                     )));
-                      } else if (index == 5) {
+                      } else if (index == 1) {
                         Navigator.push(
                             context,
                             MaterialPageRoute(

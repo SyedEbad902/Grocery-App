@@ -2,14 +2,22 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
+import 'package:grocery_app/providers/favorite_provider.dart';
+import 'package:provider/provider.dart';
 
 class ProductData extends StatelessWidget {
   final name;
   final imageUrl;
-  const ProductData({super.key, this.name, this.imageUrl});
+  final amount;
+  final price;
+  const ProductData({super.key,required this.name,
+      required this.imageUrl,
+      required this.amount,
+      required this.price});
 
   @override
   Widget build(BuildContext context) {
+    final favProvider = Provider.of<FavoriteProvider>(context);
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
@@ -77,15 +85,22 @@ class ProductData extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.only(right: 10, top: 10),
                   child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.favorite_border_outlined)),
+                      onPressed: () {
+                        favProvider.isFavorite({"name" :name,"link": imageUrl,"price":price ,"amount": amount});
+                      },
+                      icon: favProvider.isExist({
+                        "name": name,
+                        "link": imageUrl,
+                        "price": price,
+                        "amount": amount
+                      }) ?Icon(Icons.favorite,color: Colors.red,) :Icon(Icons.favorite_border_outlined)),
                 )
               ],
             ),
             Container(
                 padding: const EdgeInsets.only(left: 20),
-                child: const Text(
-                  "1kg , price",
+                child:  Text(
+                  amount,
                   style: TextStyle(fontSize: 16),
                 )),
             const SizedBox(
@@ -133,8 +148,8 @@ class ProductData extends StatelessWidget {
                 ),
                 Container(
                   margin: const EdgeInsets.only(right: 10),
-                  child: const Text(
-                    "\$4.99",
+                  child:  Text(
+                    price,
                     style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
                   ),
                 )

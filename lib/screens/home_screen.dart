@@ -123,16 +123,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         price: product[0][index]['price'],
                         // index: index,
                         // listIndex: 0,
-                        onPressed: () {  Navigator.push(
+                        onPressed: () {
+                          Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => ProductData(
                                         name: product[0][index]["name"],
                                         // imageUrl: product[listIndex][index]["url"],
-                        
-                                        imageUrl:  product[0][index]['link'] ,
+
+                                        imageUrl: product[0][index]['link'],
+                                          amount: product[0][index]['amount'],
+                                      price: product[0][index]['price']
                                       )));
- },
+                        },
                       );
                     }),
               ),
@@ -175,16 +178,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         price: product[1][index]['price'],
                         // index: index,
                         // listIndex: 1,
-                         onPressed: () {  Navigator.push(
+                        onPressed: () {
+                          Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => ProductData(
                                         name: product[1][index]["name"],
                                         // imageUrl: product[listIndex][index]["url"],
-                        
-                                        imageUrl:  product[1][index]['link'] ,
+
+                                        imageUrl: product[1][index]['link'],
+                                          amount: product[1][index]['amount'],
+                                      price: product[1][index]['price']
                                       )));
-  },
+                        },
                       );
                     }),
               ),
@@ -300,8 +306,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         amount: product[2][index]['amount'],
                         price: product[2][index]['price'],
                         // index: index,
-                        // listIndex: 2, 
-                        onPressed: () {  Navigator.push(
+                        // listIndex: 2,
+                        onPressed: () {
+                          Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => ProductData(
@@ -309,7 +316,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                         // imageUrl: product[listIndex][index]["url"],
 
                                         imageUrl: product[2][index]['link'],
-                                      ))); },
+                                        amount: product[2][index]['amount'],
+                                        price:  product[2][index]['price'],
+                                      )));
+                        },
                       );
                     }),
               ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../product-list/beverages_list.dart';
 import 'custome widgets/custome_widgets.dart';
 import 'product-data.dart';
 
@@ -62,6 +61,8 @@ class _SearchScreenState extends State<SearchScreen> {
                                   builder: (context) => ProductData(
                                         name: widget.list[index]["name"],
                                         imageUrl: widget.list[index]['link'],
+                                      amount: widget.list[index]['amount'],
+                                      price: widget.list[index]['price']
                                       )));
                         },
                         // index: index,
