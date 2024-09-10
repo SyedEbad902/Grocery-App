@@ -2,6 +2,7 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
+import 'package:grocery_app/providers/cart_provider.dart';
 import 'package:grocery_app/providers/favorite_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -10,7 +11,9 @@ class ProductData extends StatelessWidget {
   final imageUrl;
   final amount;
   final price;
-  const ProductData({super.key,required this.name,
+  const ProductData(
+      {super.key,
+      required this.name,
       required this.imageUrl,
       required this.amount,
       required this.price});
@@ -18,6 +21,7 @@ class ProductData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final favProvider = Provider.of<FavoriteProvider>(context);
+    final cartProvider = Provider.of<CartProvider>(context);
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
@@ -86,22 +90,32 @@ class ProductData extends StatelessWidget {
                   margin: const EdgeInsets.only(right: 10, top: 10),
                   child: IconButton(
                       onPressed: () {
-                        favProvider.isFavorite({"name" :name,"link": imageUrl,"price":price ,"amount": amount});
+                        favProvider.isFavorite({
+                          "name": name,
+                          "link": imageUrl,
+                          "price": price,
+                          "amount": amount
+                        });
                       },
                       icon: favProvider.isExist({
                         "name": name,
                         "link": imageUrl,
                         "price": price,
                         "amount": amount
-                      }) ?Icon(Icons.favorite,color: Colors.red,) :Icon(Icons.favorite_border_outlined)),
+                      })
+                          ? const Icon(
+                              Icons.favorite,
+                              color: Colors.red,
+                            )
+                          : const Icon(Icons.favorite_border_outlined)),
                 )
               ],
             ),
             Container(
                 padding: const EdgeInsets.only(left: 20),
-                child:  Text(
+                child: Text(
                   amount,
-                  style: TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: 16),
                 )),
             const SizedBox(
               height: 10,
@@ -115,7 +129,10 @@ class ProductData extends StatelessWidget {
                     Container(
                         margin: const EdgeInsets.only(left: 10, top: 5),
                         child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              // cartProvider.decrement();
+                              cartProvider.decrementQuantity(name);
+                            },
                             icon: const Icon(
                               Icons.remove,
                               size: 20,
@@ -124,22 +141,40 @@ class ProductData extends StatelessWidget {
                         height: 40,
                         width: 43,
                         child: Center(
-                          child: TextField(
-                            style: const TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.bold),
-                            textAlign: TextAlign.center,
-                            textAlignVertical: TextAlignVertical.center,
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
+                          child: Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                                // color: Colors.blue,
                                 borderRadius: BorderRadius.circular(15),
-                              ),
-                            ),
+                                border: Border.all(color: Colors.grey)),
+                            child: Center(
+                                child: Text(
+                              cartProvider.getQuantity(name).toString(),
+                              style: const TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.bold),
+                            )),
                           ),
+                          // TextField(
+                          //   readOnly: true,
+                          //   style: const TextStyle(
+                          //       fontSize: 13, fontWeight: FontWeight.bold),
+                          //   textAlign: TextAlign.center,
+                          //   textAlignVertical: TextAlignVertical.top,
+                          //   decoration: InputDecoration(
+                          //     border: OutlineInputBorder(
+                          //       borderRadius: BorderRadius.circular(15),
+                          //     ),
+                          //   ),
+                          // ),
                         )),
                     Container(
                         margin: const EdgeInsets.only(top: 5),
                         child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              // cartProvider.increment();
+                              cartProvider.incrementQuantity(name);
+                            },
                             icon: const Icon(
                               Icons.add,
                               size: 20,
@@ -148,9 +183,10 @@ class ProductData extends StatelessWidget {
                 ),
                 Container(
                   margin: const EdgeInsets.only(right: 10),
-                  child:  Text(
+                  child: Text(
                     price,
-                    style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 23, fontWeight: FontWeight.bold),
                   ),
                 )
               ],

@@ -48,9 +48,9 @@ class ExploreView extends StatelessWidget {
                 height: 10,
               ),
               GridView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2, // 2 containers in each row
                   crossAxisSpacing:
                       10, // No horizontal space between containers

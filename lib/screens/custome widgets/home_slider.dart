@@ -19,7 +19,7 @@ class HomeSlider extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               allowImplicitScrolling: true,
               onPageChanged: onChange,
-              physics: ClampingScrollPhysics(),
+              physics: const ClampingScrollPhysics(),
               children: [
                 Image.asset(
                   'assets/images/banner.jpg',
@@ -53,10 +53,10 @@ class HomeSlider extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: currentSlider == index
-                            ? Color.fromARGB(255, 108, 212, 144)
+                            ? const Color.fromARGB(255, 108, 212, 144)
                             : const Color.fromARGB(255, 214, 212, 212),
                         border:
-                            Border.all(color: Color.fromARGB(255, 3, 148, 8)))),
+                            Border.all(color: const Color.fromARGB(255, 3, 148, 8)))),
               ),
             ),
           ),

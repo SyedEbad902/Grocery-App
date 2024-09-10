@@ -68,7 +68,7 @@ List eggsList = [
     'price': "\$4.99",
   },
   {
-    'name': "Egg Noodles",
+    'name': "Maggi",
     'amount': "3kg, Price",
     "link": "assets/images/egg6.png",
     'price': "\$4.99",

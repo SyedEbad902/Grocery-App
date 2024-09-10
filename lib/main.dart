@@ -3,13 +3,15 @@ import 'package:grocery_app/providers/favorite_provider.dart';
 import 'package:grocery_app/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 
+import 'providers/cart_provider.dart';
+
 void main() {
  runApp(
-    /// Providers are above [MyApp] instead of inside it, so that tests
-    /// can use [MyApp] while mocking the providers
+    
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => FavoriteProvider()),
+        ChangeNotifierProvider(create: (_) => CartProvider()),
       ],
       child: const MyApp(),
     ),

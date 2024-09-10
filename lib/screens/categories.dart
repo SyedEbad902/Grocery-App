@@ -41,7 +41,7 @@ class _SearchScreenState extends State<SearchScreen> {
             children: [
               Expanded(
                 child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2, // 2 containers in every row
                       //ecrease this value to reduce space between containers
                       mainAxisSpacing: 10.0, // space between rows
