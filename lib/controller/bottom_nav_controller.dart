@@ -3,6 +3,7 @@ import "package:get/get.dart";
 import "package:grocery_app/screens/explore_view.dart";
 import "package:grocery_app/screens/home_screen.dart";
 
+import "../screens/cart_screen.dart";
 import "../screens/favorite_screen.dart";
 
 class BottomNavBarController {
@@ -10,7 +11,7 @@ class BottomNavBarController {
   var page = [
     const HomeScreen(),
     const ExploreView(),
-    const Scaffold(),
+    const CartScreen(),
     const FavoriteScreen(),
     const Scaffold(),
   ];

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/providers/favorite_provider.dart';
+import 'package:grocery_app/screens/product-data.dart';
 import 'package:provider/provider.dart';
 
 class FavoriteScreen extends StatelessWidget {
@@ -25,7 +26,7 @@ class FavoriteScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: Column(
           children: [
-            Divider(
+            const Divider(
               height: 0,
               thickness: 1,
               color: Colors.black,
@@ -84,16 +85,35 @@ class FavoriteScreen extends StatelessWidget {
                             style: const TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),
-                          const Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ProductData(
+                                          name: favProvider.favorite[index]
+                                              ["name"],
+                                          imageUrl: favProvider.favorite[index]
+                                              ["link"],
+                                          amount: favProvider.favorite[index]
+                                              ["amount"],
+                                          price: favProvider.favorite[index]
+                                              ["price"])));
+                            },
+                            child: const Icon(
+                              Icons.arrow_forward_ios,
+                              size: 20,
+                            ),
                           )
                         ],
                       ),
                     ),
                   );
                 },
-                itemCount: favProvider.favorite.length == 0
+                itemCount: favProvider.favorite.isEmpty
                     ? favProvider.favorite.length
                     : favProvider.favorite.length + 1, // Add 1 to item count
               ),

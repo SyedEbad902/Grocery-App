@@ -155,18 +155,7 @@ class ProductData extends StatelessWidget {
                                   fontSize: 15, fontWeight: FontWeight.bold),
                             )),
                           ),
-                          // TextField(
-                          //   readOnly: true,
-                          //   style: const TextStyle(
-                          //       fontSize: 13, fontWeight: FontWeight.bold),
-                          //   textAlign: TextAlign.center,
-                          //   textAlignVertical: TextAlignVertical.top,
-                          //   decoration: InputDecoration(
-                          //     border: OutlineInputBorder(
-                          //       borderRadius: BorderRadius.circular(15),
-                          //     ),
-                          //   ),
-                          // ),
+                       
                         )),
                     Container(
                         margin: const EdgeInsets.only(top: 5),
@@ -292,7 +281,14 @@ class ProductData extends StatelessWidget {
                 width: 300,
                 height: 55,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    cartProvider.AddToCart({
+                      "name": name,
+                      "link": imageUrl,
+                      "amount": amount,
+                      "price": price
+                    });
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromRGBO(83, 177, 117, 5),
                     shape: RoundedRectangleBorder(

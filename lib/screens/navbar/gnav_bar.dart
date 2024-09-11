@@ -16,7 +16,7 @@ class GoogleNavBar extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.2),
                 spreadRadius: 5,
                 blurRadius: 5,
-                offset: Offset(2, 0))
+                offset: const Offset(2, 0))
           ]),
           child: GNav(
             backgroundColor: Colors.white,
