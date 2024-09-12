@@ -64,7 +64,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                       amount: widget.list[index]['amount'],
                                       price: widget.list[index]['price']
                                       )));
-                        },
+                        }, heroTag: 'uniqueTag${index}',
                         // index: index,
                         // listIndex: 1,
                       );
