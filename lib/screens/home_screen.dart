@@ -135,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           amount: product[0][index]['amount'],
                                       price: product[0][index]['price']
                                       )));
-                        }, heroTag: 'uniqueTag${index}',
+                        }, heroTag: 'uniqueTag$index',
                       );
                     }),
               ),
@@ -190,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           amount: product[1][index]['amount'],
                                       price: product[1][index]['price']
                                       )));
-                        }, heroTag:  'uniqueTag1${index}',
+                        }, heroTag:  'uniqueTag1$index',
                       );
                     }),
               ),
@@ -319,7 +319,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         amount: product[2][index]['amount'],
                                         price:  product[2][index]['price'],
                                       )));
-                        }, heroTag:  'uniqueTag2${index}',
+                        }, heroTag:  'uniqueTag2$index',
                       );
                     }),
               ),

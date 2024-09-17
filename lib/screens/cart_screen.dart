@@ -84,7 +84,7 @@ class CartScreen extends StatelessWidget {
                                     style: const TextStyle(
                                         fontSize: 14, color: Color(0xff7C7C7C)),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                   Row(
@@ -106,7 +106,7 @@ class CartScreen extends StatelessWidget {
                                                   color: Colors.grey)),
                                           margin: const EdgeInsets.only(
                                               left: 0, top: 5),
-                                          child: Icon(
+                                          child: const Icon(
                                             Icons.remove,
                                             size: 25,
                                             color: Colors.grey,
