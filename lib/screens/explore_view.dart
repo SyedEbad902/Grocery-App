@@ -76,7 +76,7 @@ class _ExploreViewState extends State<ExploreView> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => searchScreen()),
+                              builder: (context) => const searchScreen()),
                         );
                       },
                      //  onChanged: searchEggs,
@@ -84,21 +84,21 @@ class _ExploreViewState extends State<ExploreView> {
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors
                                   .grey, // Color when the TextField is not focused
                             ),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15.0),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors
                                   .grey, // Color when the TextField is not focused
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15.0),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors
                                   .grey, // Color when the TextField is focused
                             ),

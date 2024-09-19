@@ -3,8 +3,21 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
 class CartProvider extends ChangeNotifier {
+  // bool isChecked = false;
+  List<bool> isChecked = [false, false, false, false,
+    false,
+    false,
+    false,
+    false
+  ];
+
   final List _cartList = [];
   List get cartList => _cartList;
+
+  isPressed(bool value,int index) {
+    isChecked[index] = value;
+    notifyListeners();
+  }
 
   void AddToCart(Map item) {
     bool itemExists = _cartList.any((map) => map['name'] == item["name"]);

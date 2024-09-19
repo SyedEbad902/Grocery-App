@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:grocery_app/providers/cart_provider.dart';
 import 'package:grocery_app/screens/custome%20widgets/custome_widgets.dart';
 import 'package:grocery_app/screens/product-data.dart';
+import 'package:provider/provider.dart';
 
 import '../product-list/beverages_list.dart';
 
@@ -14,46 +16,251 @@ class searchScreen extends StatefulWidget {
 
 class _searchScreenState extends State<searchScreen> {
   void _showBottomSheet(BuildContext context) {
-    bool isChecked = false;
     showModalBottomSheet(
+      backgroundColor: Color(0xfff3f3f3),
+      isScrollControlled: true, // Allow full screen height
+
       context: context,
       builder: (BuildContext context) {
+        final cartProvider = Provider.of<CartProvider>(context);
+
         return Container(
-          padding: EdgeInsets.all(16.0),
-          height: 500,
+          padding: const EdgeInsets.all(16.0),
+          height: MediaQuery.of(context).size.height *
+              0.9, // Use a percentage of screen height
           child: Column(
+            // mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: Text(
-                  "Filters",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Align(
+                    alignment: Alignment.topCenter,
+                    child: Text(
+                      "Filters",
+                      style:
+                          TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "Categories",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  Row(children: [
+                    Checkbox(
+                      side: BorderSide(color: Colors.grey),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      value: cartProvider.isChecked[0],
+                      activeColor: Color.fromRGBO(
+                          83, 177, 117, 5), // Customize active color
+                      checkColor: Colors.white, // Customize checkmark color
+                      onChanged: (bool? value) {
+                        cartProvider.isPressed(value!, 0);
+                      },
+                    ),
+                    Text(
+                      'Eggs',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: cartProvider.isChecked[0]
+                            ? Color.fromRGBO(83, 177, 117, 5)
+                            : Colors.black, // Customize active color
+                      ),
+                    ),
+                  ]),
+                  Row(children: [
+                    Checkbox(
+                      side: BorderSide(color: Colors.grey),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      value: cartProvider.isChecked[1],
+                      activeColor: Color.fromRGBO(
+                          83, 177, 117, 5), // Customize active color
+                      checkColor: Colors.white, // Customize checkmark color
+                      onChanged: (bool? value) {
+                        cartProvider.isPressed(value!, 1);
+                      },
+                    ),
+                    Text(
+                      'Noodles & Pasta',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: cartProvider.isChecked[1]
+                              ? Color.fromRGBO(83, 177, 117, 5)
+                              : Colors.black),
+                    )
+                  ]),
+                  Row(children: [
+                    Checkbox(
+                      side: BorderSide(color: Colors.grey),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      value: cartProvider.isChecked[2],
+                      activeColor: Color.fromRGBO(
+                          83, 177, 117, 5), // Customize active color
+                      checkColor: Colors.white, // Customize checkmark color
+                      onChanged: (bool? value) {
+                        cartProvider.isPressed(value!, 2);
+                      },
+                    ),
+                    Text('Chips & Crips',
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: cartProvider.isChecked[2]
+                                ? Color.fromRGBO(83, 177, 117, 5)
+                                : Colors.black)),
+                  ]),
+                  Row(children: [
+                    Checkbox(
+                      side: BorderSide(color: Colors.grey),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      value: cartProvider.isChecked[3],
+                      activeColor: Color.fromRGBO(
+                          83, 177, 117, 5), // Customize active color
+                      checkColor: Colors.white, // Customize checkmark color
+                      onChanged: (bool? value) {
+                        cartProvider.isPressed(value!, 3);
+                      },
+                    ),
+                    Text(
+                      'Fast Foods',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: cartProvider.isChecked[3]
+                              ? Color.fromRGBO(83, 177, 117, 5)
+                              : Colors.black),
+                    ),
+                  ]),
+                ],
               ),
-              Text(
-                "Categories",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              SizedBox(
+                height: 15,
               ),
-              Row(children: [
-                Checkbox(
-                  value: isChecked,
-                  activeColor: Colors.red, // Customize active color
-                  checkColor: Colors.white, // Customize checkmark color
-                  onChanged: (bool? value) {
-                    setState(() {
-                      isChecked = value!;
-                    });
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Brand",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  Row(children: [
+                    Checkbox(
+                      side: BorderSide(color: Colors.grey),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      value: cartProvider.isChecked[4],
+                      activeColor: Color.fromRGBO(
+                          83, 177, 117, 5), // Customize active color
+                      checkColor: Colors.white, // Customize checkmark color
+                      onChanged: (bool? value) {
+                        cartProvider.isPressed(value!, 4);
+                      },
+                    ),
+                    Text(
+                      'Individual Collection',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: cartProvider.isChecked[4]
+                              ? Color.fromRGBO(83, 177, 117, 5)
+                              : Colors.black),
+                    ),
+                  ]),
+                  Row(children: [
+                    Checkbox(
+                      side: BorderSide(color: Colors.grey),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      value: cartProvider.isChecked[5],
+                      activeColor: Color.fromRGBO(
+                          83, 177, 117, 5), // Customize active color
+                      checkColor: Colors.white, // Customize checkmark color
+                      onChanged: (bool? value) {
+                        cartProvider.isPressed(value!, 5);
+                      },
+                    ),
+                    Text(
+                      'Cocola',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: cartProvider.isChecked[5]
+                              ? Color.fromRGBO(83, 177, 117, 5)
+                              : Colors.black),
+                    ),
+                  ]),
+                  Row(children: [
+                    Checkbox(
+                      side: BorderSide(color: Colors.grey),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      value: cartProvider.isChecked[6],
+                      activeColor: Color.fromRGBO(
+                          83, 177, 117, 5), // Customize active color
+                      checkColor: Colors.white, // Customize checkmark color
+                      onChanged: (bool? value) {
+                        cartProvider.isPressed(value!, 6);
+                      },
+                    ),
+                    Text(
+                      'lfad',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: cartProvider.isChecked[6]
+                              ? Color.fromRGBO(83, 177, 117, 5)
+                              : Colors.black),
+                    ),
+                  ]),
+                  Row(children: [
+                    Checkbox(
+                      side: BorderSide(color: Colors.grey),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      value: cartProvider.isChecked[7],
+                      activeColor: Color.fromRGBO(
+                          83, 177, 117, 5), // Customize active color
+                      checkColor: Colors.white, // Customize checkmark color
+                      onChanged: (bool? value) {
+                        cartProvider.isPressed(value!, 7);
+                      },
+                    ),
+                    Text(
+                      'Kazi Farmas',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: cartProvider.isChecked[7]
+                              ? Color.fromRGBO(83, 177, 117, 5)
+                              : Colors.black),
+                    ),
+                  ]),
+                ],
+              ),
+              Expanded(child: const SizedBox()),
+              SizedBox(
+                width: double.infinity,
+                // height: 55,
+                height: MediaQuery.of(context).size.height * 0.07,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
                   },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromRGBO(83, 177, 117, 5),
+                    shape: RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.circular(15), // Adjust radius as needed
+                    ),
+                  ),
+                  child: const Text(
+                    "Apply Filter",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
-                Text('Custom Checkbox'),
-              ]),
-              SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context); //loses the bottom sheet
-                },
-                child: Text('Close'),
               ),
             ],
           ),
@@ -107,7 +314,7 @@ class _searchScreenState extends State<searchScreen> {
                       tag: "search Tag",
                       child: Container(
                         height: 60,
-                        width: 300,
+                        width: double.infinity,
                         padding: const EdgeInsets.only(top: 10),
                         child: TextField(
                           onChanged: searchEggs,
@@ -129,20 +336,20 @@ class _searchScreenState extends State<searchScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 15),
                   GestureDetector(
                     onTap: () {
                       _showBottomSheet(context);
                     },
                     child: SvgPicture.asset(
                       "assets/images/filter-icon.svg",
-                      width: 20,
-                      height: 20,
+                      width: 25,
+                      height: 25,
                     ),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Expanded(
@@ -168,7 +375,7 @@ class searchBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 10, bottom: 10),
+      padding: const EdgeInsets.only(top: 10, bottom: 10),
       child: GridView.builder(
           // physics: const NeverScrollableScrollPhysics(),
           // shrinkWrap: true,

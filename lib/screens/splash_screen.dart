@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/screens/onboarding.dart';
+import 'package:grocery_app/screens/search_screen.dart';
+import 'package:grocery_app/screens/signin.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,8 +16,10 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 1), () {
+      // Navigator.pushReplacement(
+      //     context, MaterialPageRoute(builder: (context) => const onboarding()));
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const onboarding()));
+          context, MaterialPageRoute(builder: (context) => const Signin()));
     });
   }
 
