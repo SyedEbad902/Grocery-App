@@ -17,7 +17,7 @@ class searchScreen extends StatefulWidget {
 class _searchScreenState extends State<searchScreen> {
   void _showBottomSheet(BuildContext context) {
     showModalBottomSheet(
-      backgroundColor: Color(0xfff3f3f3),
+      backgroundColor: const Color(0xfff3f3f3),
       isScrollControlled: true, // Allow full screen height
 
       context: context,
@@ -44,7 +44,7 @@ class _searchScreenState extends State<searchScreen> {
                           TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   const Text(
@@ -53,11 +53,11 @@ class _searchScreenState extends State<searchScreen> {
                   ),
                   Row(children: [
                     Checkbox(
-                      side: BorderSide(color: Colors.grey),
+                      side: const BorderSide(color: Colors.grey),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       value: cartProvider.isChecked[0],
-                      activeColor: Color.fromRGBO(
+                      activeColor: const Color.fromRGBO(
                           83, 177, 117, 5), // Customize active color
                       checkColor: Colors.white, // Customize checkmark color
                       onChanged: (bool? value) {
@@ -69,18 +69,18 @@ class _searchScreenState extends State<searchScreen> {
                       style: TextStyle(
                         fontSize: 16,
                         color: cartProvider.isChecked[0]
-                            ? Color.fromRGBO(83, 177, 117, 5)
+                            ? const Color.fromRGBO(83, 177, 117, 5)
                             : Colors.black, // Customize active color
                       ),
                     ),
                   ]),
                   Row(children: [
                     Checkbox(
-                      side: BorderSide(color: Colors.grey),
+                      side: const BorderSide(color: Colors.grey),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       value: cartProvider.isChecked[1],
-                      activeColor: Color.fromRGBO(
+                      activeColor: const Color.fromRGBO(
                           83, 177, 117, 5), // Customize active color
                       checkColor: Colors.white, // Customize checkmark color
                       onChanged: (bool? value) {
@@ -92,17 +92,17 @@ class _searchScreenState extends State<searchScreen> {
                       style: TextStyle(
                           fontSize: 16,
                           color: cartProvider.isChecked[1]
-                              ? Color.fromRGBO(83, 177, 117, 5)
+                              ? const Color.fromRGBO(83, 177, 117, 5)
                               : Colors.black),
                     )
                   ]),
                   Row(children: [
                     Checkbox(
-                      side: BorderSide(color: Colors.grey),
+                      side: const BorderSide(color: Colors.grey),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       value: cartProvider.isChecked[2],
-                      activeColor: Color.fromRGBO(
+                      activeColor: const Color.fromRGBO(
                           83, 177, 117, 5), // Customize active color
                       checkColor: Colors.white, // Customize checkmark color
                       onChanged: (bool? value) {
@@ -113,16 +113,16 @@ class _searchScreenState extends State<searchScreen> {
                         style: TextStyle(
                             fontSize: 16,
                             color: cartProvider.isChecked[2]
-                                ? Color.fromRGBO(83, 177, 117, 5)
+                                ? const Color.fromRGBO(83, 177, 117, 5)
                                 : Colors.black)),
                   ]),
                   Row(children: [
                     Checkbox(
-                      side: BorderSide(color: Colors.grey),
+                      side: const BorderSide(color: Colors.grey),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       value: cartProvider.isChecked[3],
-                      activeColor: Color.fromRGBO(
+                      activeColor: const Color.fromRGBO(
                           83, 177, 117, 5), // Customize active color
                       checkColor: Colors.white, // Customize checkmark color
                       onChanged: (bool? value) {
@@ -134,13 +134,13 @@ class _searchScreenState extends State<searchScreen> {
                       style: TextStyle(
                           fontSize: 16,
                           color: cartProvider.isChecked[3]
-                              ? Color.fromRGBO(83, 177, 117, 5)
+                              ? const Color.fromRGBO(83, 177, 117, 5)
                               : Colors.black),
                     ),
                   ]),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Column(
@@ -152,11 +152,11 @@ class _searchScreenState extends State<searchScreen> {
                   ),
                   Row(children: [
                     Checkbox(
-                      side: BorderSide(color: Colors.grey),
+                      side: const BorderSide(color: Colors.grey),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       value: cartProvider.isChecked[4],
-                      activeColor: Color.fromRGBO(
+                      activeColor: const Color.fromRGBO(
                           83, 177, 117, 5), // Customize active color
                       checkColor: Colors.white, // Customize checkmark color
                       onChanged: (bool? value) {
@@ -168,17 +168,17 @@ class _searchScreenState extends State<searchScreen> {
                       style: TextStyle(
                           fontSize: 16,
                           color: cartProvider.isChecked[4]
-                              ? Color.fromRGBO(83, 177, 117, 5)
+                              ? const Color.fromRGBO(83, 177, 117, 5)
                               : Colors.black),
                     ),
                   ]),
                   Row(children: [
                     Checkbox(
-                      side: BorderSide(color: Colors.grey),
+                      side: const BorderSide(color: Colors.grey),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       value: cartProvider.isChecked[5],
-                      activeColor: Color.fromRGBO(
+                      activeColor: const Color.fromRGBO(
                           83, 177, 117, 5), // Customize active color
                       checkColor: Colors.white, // Customize checkmark color
                       onChanged: (bool? value) {
@@ -190,17 +190,17 @@ class _searchScreenState extends State<searchScreen> {
                       style: TextStyle(
                           fontSize: 16,
                           color: cartProvider.isChecked[5]
-                              ? Color.fromRGBO(83, 177, 117, 5)
+                              ? const Color.fromRGBO(83, 177, 117, 5)
                               : Colors.black),
                     ),
                   ]),
                   Row(children: [
                     Checkbox(
-                      side: BorderSide(color: Colors.grey),
+                      side: const BorderSide(color: Colors.grey),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       value: cartProvider.isChecked[6],
-                      activeColor: Color.fromRGBO(
+                      activeColor: const Color.fromRGBO(
                           83, 177, 117, 5), // Customize active color
                       checkColor: Colors.white, // Customize checkmark color
                       onChanged: (bool? value) {
@@ -212,17 +212,17 @@ class _searchScreenState extends State<searchScreen> {
                       style: TextStyle(
                           fontSize: 16,
                           color: cartProvider.isChecked[6]
-                              ? Color.fromRGBO(83, 177, 117, 5)
+                              ? const Color.fromRGBO(83, 177, 117, 5)
                               : Colors.black),
                     ),
                   ]),
                   Row(children: [
                     Checkbox(
-                      side: BorderSide(color: Colors.grey),
+                      side: const BorderSide(color: Colors.grey),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)),
                       value: cartProvider.isChecked[7],
-                      activeColor: Color.fromRGBO(
+                      activeColor: const Color.fromRGBO(
                           83, 177, 117, 5), // Customize active color
                       checkColor: Colors.white, // Customize checkmark color
                       onChanged: (bool? value) {
@@ -234,13 +234,13 @@ class _searchScreenState extends State<searchScreen> {
                       style: TextStyle(
                           fontSize: 16,
                           color: cartProvider.isChecked[7]
-                              ? Color.fromRGBO(83, 177, 117, 5)
+                              ? const Color.fromRGBO(83, 177, 117, 5)
                               : Colors.black),
                     ),
                   ]),
                 ],
               ),
-              Expanded(child: const SizedBox()),
+              const Expanded(child: SizedBox()),
               SizedBox(
                 width: double.infinity,
                 // height: 55,
