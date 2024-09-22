@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
+import 'package:grocery_app/screens/location_screen.dart';
 import 'package:grocery_app/screens/navbar/gnav_bar.dart';
 
 class VerificationScreen extends StatefulWidget {
@@ -23,7 +24,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const GoogleNavBar()));
+                    builder: (context) => const LocationScreen()));
           },
           shape: const CircleBorder(),
           backgroundColor: const Color(0xff53B175),

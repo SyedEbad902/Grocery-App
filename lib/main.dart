@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/providers/favorite_provider.dart';
+import 'package:grocery_app/screens/location_screen.dart';
 import 'package:grocery_app/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'providers/cart_provider.dart';
 
 void main() {
-  
- runApp(
-    
+  runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => FavoriteProvider()),
@@ -32,6 +31,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const SplashScreen());
+        home:     SplashScreen());
   }
 }

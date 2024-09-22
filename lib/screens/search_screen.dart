@@ -341,8 +341,8 @@ class _searchScreenState extends State<searchScreen> {
                     onTap: () {
                       _showBottomSheet(context);
                     },
-                    child: SvgPicture.asset(
-                      "assets/images/filter-icon.svg",
+                    child: Image.asset(
+                      "assets/images/filter-icon.png",
                       width: 25,
                       height: 25,
                     ),
