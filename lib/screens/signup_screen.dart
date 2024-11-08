@@ -150,7 +150,7 @@ class SignupScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => VerificationScreen()));
+                            builder: (context) => const VerificationScreen()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromRGBO(83, 177, 117, 5),
@@ -177,7 +177,7 @@ class SignupScreen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginScreen()));
+                                builder: (context) => const LoginScreen()));
                       },
                       child: const Text(
                         "Login",

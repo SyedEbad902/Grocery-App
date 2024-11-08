@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/screens/login_screen.dart';
-import 'package:grocery_app/screens/navbar/gnav_bar.dart';
 
 // ignore: camel_case_types
 class onboarding extends StatelessWidget {

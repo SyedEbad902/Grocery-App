@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:grocery_app/screens/login_screen.dart';
 import 'package:grocery_app/screens/onboarding.dart';
-import 'package:grocery_app/screens/signin.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

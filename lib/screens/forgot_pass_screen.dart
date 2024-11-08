@@ -111,7 +111,7 @@ class ForgotPassScreen extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.center,
                           child: Container(
-                            padding: EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(8),
                             height: MediaQuery.of(context).size.height * 0.07,
                             width: double.infinity,
                             decoration: BoxDecoration(

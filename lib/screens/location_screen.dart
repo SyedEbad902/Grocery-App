@@ -35,7 +35,7 @@ class _LocationScreenState extends State<LocationScreen> {
       fruitDropdownItems.add(CoolDropdownItem<String>(
           label: 'Delicious ${fruits[i]}',
           icon: Container(
-            margin: EdgeInsets.only(left: 10),
+            margin: const EdgeInsets.only(left: 10),
             height: 25,
             width: 25,
             child: SvgPicture.asset(
@@ -43,15 +43,15 @@ class _LocationScreenState extends State<LocationScreen> {
             ),
           ),
           selectedIcon: Container(
-            margin: EdgeInsets.only(left: 10),
+            margin: const EdgeInsets.only(left: 10),
             height: 25,
             width: 25,
             child: SvgPicture.asset(
               'assets/${fruits[i]}.svg',
-              color: Color(0xFF6FCC76),
+              color: const Color(0xFF6FCC76),
             ),
           ),
-          value: '${fruits[i]}'));
+          value: fruits[i]));
     }
     super.initState();
   }
@@ -74,7 +74,7 @@ class _LocationScreenState extends State<LocationScreen> {
                   children: <Widget>[
                     // Image widget
 
-                    Container(
+                    SizedBox(
                       // color: Colors.blueAccent,
                       height: MediaQuery.of(context).size.height * 0.4,
                       width: double.infinity,
@@ -120,16 +120,16 @@ class _LocationScreenState extends State<LocationScreen> {
               const SizedBox(
                 height: 15,
               ),
-              Align(
+              const Align(
                 alignment: Alignment.topLeft,
-                child: const Text(
+                child: Text(
                   "Your Zone",
                   style: TextStyle(
                     fontSize: 16,
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Center(
@@ -157,7 +157,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       print("open");
                     },
                     resultOptions: ResultOptions(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       height: MediaQuery.of(context).size.height * 0.07,
                       width: double.infinity,
                       icon: const SizedBox(
@@ -171,7 +171,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       placeholder: 'Select Your Zone',
                       isMarquee: true,
                     ),
-                    dropdownOptions: DropdownOptions(
+                    dropdownOptions: const DropdownOptions(
                         top: 20,
                         height: 400,
                         gap: DropdownGap.all(5),
@@ -179,14 +179,14 @@ class _LocationScreenState extends State<LocationScreen> {
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         align: DropdownAlign.left,
                         animationType: DropdownAnimationType.size),
-                    dropdownTriangleOptions: DropdownTriangleOptions(
+                    dropdownTriangleOptions: const DropdownTriangleOptions(
                       width: 20,
                       height: 30,
                       align: DropdownTriangleAlign.left,
                       borderRadius: 3,
                       left: 20,
                     ),
-                    dropdownItemOptions: DropdownItemOptions(
+                    dropdownItemOptions: const DropdownItemOptions(
                       isMarquee: true,
                       mainAxisAlignment: MainAxisAlignment.start,
                       render: DropdownItemRender.all,
@@ -198,16 +198,16 @@ class _LocationScreenState extends State<LocationScreen> {
               const SizedBox(
                 height: 15,
               ),
-              Align(
+              const Align(
                 alignment: Alignment.topLeft,
-                child: const Text(
+                child: Text(
                   "Your Area",
                   style: TextStyle(
                     fontSize: 16,
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Center(
@@ -235,7 +235,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       print("open");
                     },
                     resultOptions: ResultOptions(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       height: MediaQuery.of(context).size.height * 0.07,
                       width: double.infinity,
                       icon: const SizedBox(
@@ -249,7 +249,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       placeholder: 'types of your area',
                       isMarquee: true,
                     ),
-                    dropdownOptions: DropdownOptions(
+                    dropdownOptions: const DropdownOptions(
                         top: 20,
                         height: 400,
                         gap: DropdownGap.all(5),
@@ -257,14 +257,14 @@ class _LocationScreenState extends State<LocationScreen> {
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         align: DropdownAlign.left,
                         animationType: DropdownAnimationType.size),
-                    dropdownTriangleOptions: DropdownTriangleOptions(
+                    dropdownTriangleOptions: const DropdownTriangleOptions(
                       width: 20,
                       height: 30,
                       align: DropdownTriangleAlign.left,
                       borderRadius: 3,
                       left: 20,
                     ),
-                    dropdownItemOptions: DropdownItemOptions(
+                    dropdownItemOptions: const DropdownItemOptions(
                       isMarquee: true,
                       mainAxisAlignment: MainAxisAlignment.start,
                       render: DropdownItemRender.all,
@@ -273,7 +273,7 @@ class _LocationScreenState extends State<LocationScreen> {
                   ),
                 ),
               ),
-              Expanded(
+              const Expanded(
                   child: SizedBox(
                 height: 10,
               )),

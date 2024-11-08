@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
 import 'package:grocery_app/screens/location_screen.dart';
-import 'package:grocery_app/screens/navbar/gnav_bar.dart';
 
 class VerificationScreen extends StatefulWidget {
   const VerificationScreen({super.key});
