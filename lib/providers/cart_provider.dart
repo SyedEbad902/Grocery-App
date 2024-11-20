@@ -3,7 +3,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
 class CartProvider extends ChangeNotifier {
-  // bool isChecked = false;
   List<bool> isChecked = [false, false, false, false,
     false,
     false,
@@ -26,9 +25,7 @@ class CartProvider extends ChangeNotifier {
     if (itemExists) {
       print("already added");
       showToast("Item already added to cart");
-      // isExist = false;
-      // notifyListeners();
-      // favorite.remove(item);
+      
     } else {
       _cartList.add(item);
       showToast("Item added to cart");
